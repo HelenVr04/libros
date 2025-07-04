@@ -15,11 +15,11 @@ export class LibroService {
 
   
   //metodo para agregar un libro
-  agregarLibro(data:any) : Observable<any>{
-    let url = `${this.baseUri}/agregar`;
-    return this.http.post(url,data)
+agregarLibro(data: any): Observable<any> {
+  let url = `${this.baseUri}/agregar`; // ESTA
+  return this.http.post(url, data, { headers: this.headers })
     .pipe(catchError(this.errorManager));
-  }
+}
 
   //metodo para obtener todos los libros
   getLibros(){

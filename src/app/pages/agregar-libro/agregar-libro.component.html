@@ -1,1 +1,62 @@
-<p>agregar-libro works!</p>
+<div class="container" style="margin: 20px;">
+  <h2>Agregar Libro</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card-body">
+        <form [formGroup]="libroForm" (ngSubmit)="onSubmit()">
+
+          <!-- Título -->
+          <div class="form-group">
+            <label for="titulo">Título:</label>
+            <input type="text" class="form-control" formControlName="titulo" />
+            @if (enviado && myForm['titulo'].errors?.['required']) {
+              <div style="color:red;">Este campo es obligatorio</div>
+            }
+          </div>
+          <br />
+
+          <!-- Autor -->
+          <div class="form-group">
+            <label for="autor">Autor:</label>
+            <input type="text" class="form-control" formControlName="autor" />
+            @if (enviado && myForm['autor'].errors?.['required']) {
+              <div style="color:red;">Este campo es obligatorio</div>
+            }
+          </div>
+          <br />
+
+          <!-- Editorial -->
+          <div class="form-group">
+            <label for="editorial">Editorial:</label>
+            <input type="text" class="form-control" formControlName="editorial" />
+            @if (enviado && myForm['editorial'].errors?.['required']) {
+              <div style="color:red;">Este campo es obligatorio</div>
+            }
+          </div>
+          <br />
+
+          <!-- Recomendado -->
+          <div class="form-group">
+            <label for="recomendado">Recomendado:</label>
+            <select class="custom-select form-control" formControlName="recomendado">
+              <option value="">Selecciona una opción...</option>
+              @for (opcion of opcionesRecomendado; track opcion) {
+                <option [value]="opcion.value">{{ opcion.label }}</option>
+              }
+            </select>
+            @if (enviado && myForm['recomendado'].errors?.['required']) {
+              <div style="color:red;">Debes seleccionar una opción</div>
+            }
+          </div>
+          <br />
+
+          <!-- Botón -->
+          <div class="form-group">
+            <button class="btn btn-primary btn-block" type="submit">Agregar libro</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
