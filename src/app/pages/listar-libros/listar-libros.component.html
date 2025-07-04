@@ -23,7 +23,7 @@
                         <td>{{ libro.titulo }}</td>
                         <td>{{ libro.autor }}</td>
                         <td>{{ libro.editorial }}</td>
-                        <td>{{ libro.recomendado }}</td>
+                        <td>{{ libro.recomendado ? 'Si':'No' }}</td>
                         <td>
                             <a [routerLink]="['/editar-libro',libro._id]" class="btn btn-warning btn-sm">Editar</a>
                         </td>

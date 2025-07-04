@@ -43,7 +43,7 @@ export class EditarLibroComponent implements OnInit {
   mainForm() {
     this.libroForm = this.formBuilder.group({
       titulo: ['', [Validators.required]],
-      autor: ['', [Validators.required]],
+      autor: ['', [Validators.required, Validators.pattern(/^[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+$/)]],
       editorial: ['', [Validators.required]],
       recomendado: ['', [Validators.required]]
     });

@@ -22,6 +22,11 @@
             @if(enviado && myForm['autor'].errors?.['required']) {
               <div style="color: red;">Este campo es obligatorio</div>
             }
+             @if(enviado && myForm['autor'].errors?.['pattern']){
+               <div style="color: red;"> 
+                 Solo se permite texto en este campo (no números o caracteres especiales)
+               </div>
+            }    
           </div>
           <br />
 

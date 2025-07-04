@@ -15,7 +15,6 @@ export class AgregarLibroComponent implements OnInit {
   libroForm: FormGroup = new FormGroup({});
   enviado: boolean = false;
 
-  // ✅ Aquí estaba el problema antes: esta propiedad debe estar declarada en la clase
   opcionesRecomendado = [
     { label: 'Sí', value: true },
     { label: 'No', value: false }
@@ -35,7 +34,7 @@ export class AgregarLibroComponent implements OnInit {
   mainForm() {
     this.libroForm = this.formBuilder.group({
       titulo: ['', [Validators.required]],
-      autor: ['', [Validators.required]],
+      autor: ['', [Validators.required, Validators.pattern(/^[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+$/)]],
       editorial: ['', [Validators.required]],
       recomendado: ['', [Validators.required]]
     });
