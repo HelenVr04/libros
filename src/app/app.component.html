@@ -1,13 +1,29 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" data-bs-theme="dark">
-  <div id="navbarNav" class="collapse navbar-collapse">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/listar-libros">Lista de Libros</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/agregar-libro">Agregar Libro</a>
-      </li>
-    </ul>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark" data-bs-theme="dark">
+  <div class="container-fluid">
+        <a class="navbar-brand" href="#">Biblioteca</a>
+    <!-- Botón hamburguesa -->
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Contenido del menú colapsable -->
+    <div id="navbarNav" class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/listar-libros">Lista de Libros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/agregar-libro">Agregar Libro</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 <router-outlet></router-outlet>

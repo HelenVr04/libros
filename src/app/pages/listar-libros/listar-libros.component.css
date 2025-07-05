@@ -43,10 +43,25 @@ h2::after {
 
 /* Tabla estilizada */
 table.table {
-  background-color: #ffffff;
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Zebra striping */
+table.table tbody tr:nth-child(odd) {
+  background-color: #ffffff; /* blanco */
+}
+
+table.table tbody tr:nth-child(even) {
+  background-color: #f2f2f2; /* gris clarito */
+}
+
+/* Hover fila */
+table.table tbody tr:hover {
+  background-color: #e2e6ea;
 }
 
 thead.table-success {

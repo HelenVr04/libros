@@ -86,6 +86,8 @@ export class EditarLibroComponent implements OnInit {
               console.log(e);
             }
           });
+      }else{
+        this.router.navigateByUrl('/listar-libros')
       }
       return;
     }
